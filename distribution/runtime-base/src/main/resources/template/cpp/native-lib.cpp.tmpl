@@ -44,7 +44,7 @@ void callJava(const char *event) {
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_faker_android_FakerApp_fakeApp(JNIEnv *env, jobject thiz, jobject application) {
+Java_faker_android_boot_FakerApp_fakeApp(JNIEnv *env, jobject thiz, jobject application) {
     fakeApp(env,application);
 
     /**
@@ -52,7 +52,7 @@ Java_com_faker_android_FakerApp_fakeApp(JNIEnv *env, jobject thiz, jobject appli
      * below  is demo code demo code hook libil2cpp.so
      */
      //long base = baseImageAddr("libil2cpp.so");
-     //LOGE("baseIamgeAddr : %ld",base);
+     //LOGE("baseImageAddr : %ld",base);
      //By ida get or ghidra get the method offset
      //Behaviour_get_isActiveAndEnabled =base + offset,HookedBehaviour_get_isActiveAndEnabled = your define method,Behaviour_get_isActiveAndEnabled =  base + offset
      //fakeCpp((void *) Behaviour_get_isActiveAndEnabled, (void *)HookedBehaviour_get_isActiveAndEnabled ,reinterpret_cast<void **>(&Behaviour_get_isActiveAndEnabled));
@@ -60,13 +60,13 @@ Java_com_faker_android_FakerApp_fakeApp(JNIEnv *env, jobject thiz, jobject appli
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_faker_android_FakerApp_fakeDex(JNIEnv *env, jobject thiz, jobject base) {
+Java_faker_android_boot_FakerApp_fakeDex(JNIEnv *env, jobject thiz, jobject base) {
     fakeDex(env,base,"dex");//安装DEX
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_faker_android_FakerActivity_registerCallBack(JNIEnv *env, jobject thiz,jobject object) {
+Java_faker_android_boot_FakerActivity_registerCallBack(JNIEnv *env, jobject thiz,jobject object) {
     /**
      * init the callback global for other c++ method to call
      */

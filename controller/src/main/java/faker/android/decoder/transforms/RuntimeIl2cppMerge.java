@@ -19,7 +19,7 @@ public class RuntimeIl2cppMerge extends Transform {
     public boolean transform(TransformInvocation transformInvocation) {
         File il2cppScaffoldingARM = new File(androidProject.getCpp(),"Il2cpp-Scaffolding-ARM");
         File il2cppScaffoldingARM64 = new File(androidProject.getCpp(),"Il2cpp-Scaffolding-ARM64");
-        if(!il2cppScaffoldingARM.exists()&&!il2cppScaffoldingARM64.exists()){
+        if(!il2cppScaffoldingARM.exists()&&!il2cppScaffoldingARM64.exists()) {
             return true;
         }
         transformInvocation.callBack("Runtime il2cpp merging...");
@@ -31,7 +31,7 @@ public class RuntimeIl2cppMerge extends Transform {
 
     private void fixTmplCode(AndroidProject androidProject) {
         AndroidProject.ManifestInfo manifestInfo = (AndroidProject.ManifestInfo) androidProject.getIntermediate(AndroidProject.INTERMEDIATE_MANIFESTINFO);
-        File fakerActivityFile = new File(androidProject.getJava(),"com/faker/android/FakerActivity.java");
+        File fakerActivityFile = new File(androidProject.getJava(),"faker/android/boot/FakerActivity.java");
         try {
             FileUtils.autoReplaceStr(fakerActivityFile,"{R}",manifestInfo.getPakcageName()+".R");
         } catch (IOException e) {

@@ -16,7 +16,7 @@ A tool translate a apk file to stantard android project include so hook api and 
 - Unlimited possibilities and expansibility. You has the final say
 ### Environment
 - Java
-- Il2cpp Game Apk unable to generate il2cpp C++ scaffolding for non windows
+- For Il2cpp Game Apk to generate il2cpp C++ scaffolding .Net environment needed ([Mac&Linux users handle it by yourself](https://dotnet.microsoft.com/download/dotnet/5.0)) 
 ### Usage
 - Download [FakerAndroid.jar](https://github.com/Efaker/FakerAndroid/releases)(2020/11/15/16:52:00)
 - cmd ```cd <FakerAndroid.jar base dir>``` 
@@ -25,19 +25,18 @@ A tool translate a apk file to stantard android project include so hook api and 
 ### Secondary development course
 ##### 1、Open the project
 - By Android studio File->open->```<generated project root>```
-- keep the root dir build.gradle file depends com.android.tools.build:gradle:3.4.0,don't upgrate or modify it
+- Keep the root dir build.gradle file depends com.android.tools.build:gradle:3.4.0,don't upgrate or modify it
 - Set project ndk base version 21 best
 - A little modification will be needed by yourself when the res or AndroidManifest.xml can't pass the compiler 
 ##### 2、Debug or run the project
 - With a testing machine conected
-- Run（Note： x86 is unsupport now ）
 ##### 3、Advanced
 - Original java class call  
   With the help of javaScaffoding write your java code to call original class in app moudle(app/src/main/java) 
 - Original java class replacement      
   Write java code in moudle app（app/src/main/java）,keep the class name and package name corresponding same as the original class
 - Smali increament building  
-  when there is a smali files mod,there is a least files builing 
+  When there is a smali files mod,there is a least files builing 
 - So Hook  
   With the help of fakeCpp api use jni hook the so method
 - Il2cpp unity script development  
